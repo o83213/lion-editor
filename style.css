@@ -19,3 +19,13 @@ body {
   font-family: "Inter", sans-serif;
   line-height: 1;
 }
+.container {
+  border: 1px solid black;
+}
+.toolbar {
+  height: 50px;
+}
+.editor {
+  border: 2px solid orangered;
+  height: 600px;
+}
