@@ -1,3 +1,6 @@
+import sheet from "./selfCss.css" assert { type: "css" };
+// be careful to use specific className that prevent css setting spread outside the content!
+document.adoptedStyleSheets = [sheet];
 const createEditor = (hostElementId) => {
   // hostElement
   const hostElement = document.getElementById(hostElementId);
