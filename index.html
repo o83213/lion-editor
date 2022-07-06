@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="script.js" defer></script>
+    <!-- <script>
+      import function1 form './..';
+      function1('hostElement')
+    </script> -->
     <link rel="stylesheet" href="style.css" />
     <style>
       * {
@@ -31,5 +35,11 @@
       spellcheck="false"
     ></div>
     <br />
+    <div id="lion-editor">
+      <script type="module">
+        import { sayHi } from "./test.js";
+        sayHi("lion-editor");
+      </script>
+    </div>
   </body>
 </html>
