@@ -1,0 +1,5 @@
+## 忽略vscode資料夾
+.vscode
+
+## 忽略node_module資料夾
+node_modules
