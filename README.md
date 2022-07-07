@@ -2,6 +2,10 @@
 
 A rich-text editor build with TS and JS.
 
+# Start
+
+use npm start to run the module
+
 # Blue Print
 
 ## User Storys

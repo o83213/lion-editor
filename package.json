@@ -1,0 +1,23 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "description": "A rich-text editor build with TS and JS.",
+  "main": "app.js",
+  "scripts": {
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o83213/lion-editor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/o83213/lion-editor/issues"
+  },
+  "homepage": "https://github.com/o83213/lion-editor#readme",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

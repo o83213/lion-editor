@@ -25,7 +25,7 @@ body {
 .toolbar {
   height: 50px;
 }
-.editor {
+.editableArea {
   border: 2px solid orangered;
   height: 600px;
 }
