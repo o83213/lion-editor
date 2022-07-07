@@ -4,7 +4,7 @@ A rich-text editor build with TS and JS.
 
 # Start
 
-use npm start to run the module
+use npm start to run the module with webpack setting!
 
 # Blue Print
 
