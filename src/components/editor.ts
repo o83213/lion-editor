@@ -1,9 +1,9 @@
 import { Component } from "./base-component";
 import { EditableArea } from "./editable-area";
 import { Toolbar } from "./toolbar";
-export class Editor extends Component<HTMLDivElement> {
+export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
   constructor(hostElementId: string) {
-    super(hostElementId, true, "lion-editor-editor");
+    super(hostElementId, "div", true, "lion-editor-editor");
     this.configure();
   }
   configure(): void {

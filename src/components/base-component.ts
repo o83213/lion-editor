@@ -1,13 +1,14 @@
-export abstract class Component<T extends HTMLElement> {
+export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
   hostElement: T;
-  element: HTMLDivElement;
+  element: U;
   constructor(
     hostElementId: string,
+    elementType: string,
     insertAtStart: boolean,
     newElementId?: string
   ) {
     this.hostElement = document.getElementById(hostElementId)! as T;
-    this.element = document.createElement("div");
+    this.element = document.createElement(elementType) as U;
     if (newElementId) {
       this.element.id = newElementId;
     }
