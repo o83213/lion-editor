@@ -5,31 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      .container {
-        height: 300px;
-        border: 2px solid black;
-      }
-    </style>
+    <script type="module" src="dist/bundle.js"></script>
   </head>
   <body>
-    <nav>
-      <button id="button1">Add another editable block</button>
-      <button id="button2">save content</button>
-    </nav>
-    <div
-      class="container"
-      id="container"
-      contenteditable="true"
-      spellcheck="false"
-    ></div>
-    <br />
+    <div style="width: 90vw; height: 800px; margin: 0 auto">
+      <h1>This is a Editor Test!</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet,
+        tempora officia
+      </p>
+      <br />
+      <div id="lion-editor">
+        <script type="module">
+          createEditor("lion-editor");
+        </script>
+      </div>
+    </div>
   </body>
 </html>
