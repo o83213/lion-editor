@@ -4,8 +4,12 @@ import { addBlock } from "../utils/addBlock";
 import { saveContent } from "../utils/saveContent";
 export class Toolbar extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
-  constructor(hostElementId: string) {
-    super(hostElementId, "div", true, "lion-editor-toolbar");
+  constructor(
+    hostElementId: string,
+    newElementId?: string,
+    newElementClass?: string[] | string
+  ) {
+    super(hostElementId, "div", true, newElementId, newElementClass);
     this.editableArea = document.getElementById(
       "lion-editor-editable-area"
     )! as HTMLDivElement;
@@ -38,6 +42,11 @@ export class Toolbar extends Component<HTMLDivElement, HTMLDivElement> {
     },
   ];
   configure() {
-    new ButtonList(this.buttonListTop);
+    new ButtonList(
+      this.element.id,
+      this.buttonListTop,
+      "lion-editor-buttonList-top",
+      ["lion-editor-button-list", "button-list-top"]
+    );
   }
 }

@@ -11,6 +11,9 @@
 
 .container {
   border: 1px solid black;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
 }
 .toolbar {
   height: 50px;
@@ -18,11 +21,13 @@
 .editableArea {
   border: 2px solid orangered;
   height: 600px;
+  grid-column: 2;
+  grid-row: 2;
 }
-.lion-editor-buttonlist {
+.lion-editor-button-list {
   display: flex;
   gap: 20px;
-  margin: 20px 0;
+  /* margin: 20px 0; */
 }
 .lion-editor-button {
   border: none;
@@ -36,4 +41,23 @@
 }
 .lion-editor-button:hover {
   background-color: #43bebf;
+}
+
+/*  grid setting  */
+.lion-editor-toolbar-top {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: red;
+  height: 100px;
+}
+.lion-editor-toolbar-left {
+  grid-column: 1;
+  grid-row: 1/-1;
+  background-color: gray;
+}
+.lion-editor-toolbar-bottom {
+  grid-column: 2;
+  grid-row: 3;
+  background-color: blue;
+  height: 100px;
 }
