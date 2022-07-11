@@ -40,6 +40,18 @@ export class Toolbar extends Component<HTMLDivElement, HTMLDivElement> {
         addBlock(this.editableArea, "blockquote");
       },
     },
+    {
+      name: "Add photo(from PC)!",
+      callback: () => {
+        alert("Add photo(from PC)");
+      },
+    },
+    {
+      name: "Add photo(link)!",
+      callback: () => {
+        alert("Add photo(link)");
+      },
+    },
   ];
   configure() {
     new ButtonList(
