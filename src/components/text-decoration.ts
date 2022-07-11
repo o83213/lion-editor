@@ -2,7 +2,7 @@ import { Component } from "./base-component";
 import { ButtonList } from "./button/butonList";
 import { addBlock } from "../utils/addBlock";
 import { saveContent } from "../utils/saveContent";
-export class Toolbar extends Component<HTMLDivElement, HTMLDivElement> {
+export class TextDecoration extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
   constructor(
     hostElementId: string,
@@ -17,27 +17,33 @@ export class Toolbar extends Component<HTMLDivElement, HTMLDivElement> {
   }
   buttonListTop = [
     {
-      name: "Create Block!",
+      name: "Bold!",
       callback: () => {
-        addBlock(this.editableArea, "p");
+        alert("Bold!");
       },
     },
     {
-      name: "Save Content!",
+      name: "Italic!",
       callback: () => {
-        saveContent(this.editableArea.innerHTML);
+        alert("Italic!");
       },
     },
     {
-      name: "Ceate order list!",
+      name: "Under text!",
       callback: () => {
-        addBlock(this.editableArea, "ol");
+        alert("Under text!");
       },
     },
     {
-      name: "Ceate IG embeded!",
+      name: "Delete line!",
       callback: () => {
-        addBlock(this.editableArea, "blockquote");
+        alert("Under text!");
+      },
+    },
+    {
+      name: "Hyper link!",
+      callback: () => {
+        alert("Hyper link!");
       },
     },
   ];

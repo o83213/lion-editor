@@ -2,7 +2,7 @@ import { Component } from "./base-component";
 import { ButtonList } from "./button/butonList";
 import { addBlock } from "../utils/addBlock";
 import { saveContent } from "../utils/saveContent";
-export class Toolbar extends Component<HTMLDivElement, HTMLDivElement> {
+export class ToolbarBottom extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
   constructor(
     hostElementId: string,
@@ -17,27 +17,15 @@ export class Toolbar extends Component<HTMLDivElement, HTMLDivElement> {
   }
   buttonListTop = [
     {
-      name: "Create Block!",
+      name: "store script!",
       callback: () => {
-        addBlock(this.editableArea, "p");
+        alert("store script!");
       },
     },
     {
-      name: "Save Content!",
+      name: "publish!",
       callback: () => {
-        saveContent(this.editableArea.innerHTML);
-      },
-    },
-    {
-      name: "Ceate order list!",
-      callback: () => {
-        addBlock(this.editableArea, "ol");
-      },
-    },
-    {
-      name: "Ceate IG embeded!",
-      callback: () => {
-        addBlock(this.editableArea, "blockquote");
+        alert("publish!");
       },
     },
   ];

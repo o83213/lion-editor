@@ -4,11 +4,16 @@ import { defaultEditableAreaContent as defaultContent } from "../data/default-co
 
 export class EditableArea extends Component<HTMLDivElement, HTMLDivElement> {
   constructor(hostElementId: string) {
-    super(hostElementId, "div", true, "lion-editor-editable-area");
+    super(
+      hostElementId,
+      "div",
+      true,
+      "lion-editor-editable-area",
+      "editableArea"
+    );
     this.configure();
   }
   configure() {
-    this.element.classList.add("editableArea");
     this.element.contentEditable = "true";
     this.element.spellcheck = false;
     // @autobind

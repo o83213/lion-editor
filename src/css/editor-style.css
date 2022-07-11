@@ -14,26 +14,40 @@
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr auto;
+  background-color: #f5f5f5;
 }
-.toolbar {
-  height: 50px;
+#lion-editor-toolbar {
+  background-color: rgb(175, 175, 175);
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
 }
 .editableArea {
-  border: 2px solid orangered;
+  background-color: white;
+  border-radius: 10px;
+  width: 1000px;
   height: 600px;
   grid-column: 2;
   grid-row: 2;
+  margin: 60px 20px 40px 10px;
+  padding: 20px;
 }
 .lion-editor-button-list {
   display: flex;
+  gap: 10px;
+}
+.lion-editor-toolbar-left-bl {
+  flex-direction: column;
+}
+.lion-editor-toolbar-top-bl {
   gap: 20px;
-  /* margin: 20px 0; */
 }
 .lion-editor-button {
   border: none;
   font-size: 16px;
   font-weight: 600;
-  background-color: #a1dfdf;
+  color: #3e3e3e;
+  background-color: #d9d9d9;
   height: 50px;
   width: 100px;
   border-radius: 10px;
@@ -50,6 +64,10 @@
   background-color: red;
   height: 100px;
 }
+.button-list-top {
+  display: flex;
+}
+
 .lion-editor-toolbar-left {
   grid-column: 1;
   grid-row: 1/-1;
