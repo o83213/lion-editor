@@ -14,10 +14,13 @@ export class ButtonList extends Component<HTMLDivElement, HTMLElement> {
     this.configure();
   }
   configure() {
-    new Button(this.element.id, "Create Block!", () => {
+    new Button(this.element.id, "插入內文", () => {
       addBlock(this.editableArea, "p");
     });
-    new Button(this.element.id, "Save Content!", () => {
+    new Button(this.element.id, "插入圖片", () => {
+      addBlock(this.editableArea, `input`);
+    });
+    new Button(this.element.id, "儲存內容", () => {
       saveContent(this.editableArea.innerHTML);
     });
   }
