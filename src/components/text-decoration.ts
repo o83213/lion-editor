@@ -1,7 +1,5 @@
 import { Component } from "./base-component";
 import { ButtonList } from "./button/butonList";
-import { addBlock } from "../utils/addBlock";
-import { saveContent } from "../utils/saveContent";
 export class TextDecoration extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
   constructor(
@@ -15,7 +13,7 @@ export class TextDecoration extends Component<HTMLDivElement, HTMLDivElement> {
     )! as HTMLDivElement;
     this.configure();
   }
-  buttonListTop = [
+  buttons = [
     {
       name: "Bold!",
       callback: () => {
@@ -48,11 +46,9 @@ export class TextDecoration extends Component<HTMLDivElement, HTMLDivElement> {
     },
   ];
   configure() {
-    new ButtonList(
-      this.element.id,
-      this.buttonListTop,
-      "lion-editor-buttonList",
-      ["lion-editor-button-list", `${this.element.id}-bl`]
-    );
+    new ButtonList(this.element.id, this.buttons, "lion-editor-buttonList", [
+      "lion-editor-button-list",
+      `${this.element.id}-bl`,
+    ]);
   }
 }

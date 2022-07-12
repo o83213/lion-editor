@@ -1,7 +1,7 @@
 export const addBlock = (target: HTMLElement, blockType: string) => {
   console.log("addBlockHandler");
   const newBlock = document.createElement("div");
-  let content: HTMLElement;
+  let content: HTMLElement | string;
   switch (blockType) {
     case "ul":
     case "ol":
@@ -9,12 +9,16 @@ export const addBlock = (target: HTMLElement, blockType: string) => {
       content.style.listStylePosition = "inside";
       for (let i = 0; i < 3; i++) {
         const listElement = document.createElement("li");
-        listElement.innerHTML = `list:${i + 1}`;
+        // listElement.innerHTML = `list:${i + 1}`;
         content.append(listElement);
       }
       break;
     case "blockquote":
       const data = prompt("請輸入鑲嵌的code: ")!;
+      if (data.trim().length === 0) {
+        alert("沒輸入內容喔!");
+        return;
+      }
       content = document.createElement("div");
       content.classList.add("embeded-card");
       // make the parent of the first div in the document becomes the context node

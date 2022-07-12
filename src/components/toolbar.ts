@@ -15,7 +15,7 @@ export class Toolbar extends Component<HTMLDivElement, HTMLDivElement> {
     )! as HTMLDivElement;
     this.configure();
   }
-  buttonListTop = [
+  buttons = [
     {
       name: "Create Block!",
       callback: () => {
@@ -41,24 +41,18 @@ export class Toolbar extends Component<HTMLDivElement, HTMLDivElement> {
       },
     },
     {
-      name: "Add photo(from PC)!",
+      name: "Add photo!",
       callback: () => {
-        alert("Add photo(from PC)");
-      },
-    },
-    {
-      name: "Add photo(link)!",
-      callback: () => {
-        alert("Add photo(link)");
+        document
+          .getElementById("lion-editor-image-modal")!
+          .classList.toggle("hidden");
       },
     },
   ];
   configure() {
-    new ButtonList(
-      this.element.id,
-      this.buttonListTop,
-      "lion-editor-buttonList",
-      ["lion-editor-button-list", `${this.element.id}-bl`]
-    );
+    new ButtonList(this.element.id, this.buttons, "lion-editor-buttonList", [
+      "lion-editor-button-list",
+      `${this.element.id}-bl`,
+    ]);
   }
 }

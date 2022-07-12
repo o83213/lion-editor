@@ -3,6 +3,7 @@ import { EditableArea } from "./editable-area";
 import { TextDecoration } from "./text-decoration";
 import { Toolbar } from "./toolbar";
 import { ToolbarBottom } from "./toolbarBottom";
+import { ImageInputModal } from "./imgae-input-modal";
 export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
   constructor(hostElementId: string) {
     super(hostElementId, "div", true, "lion-editor-editor");
@@ -12,21 +13,26 @@ export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
   configure(): void {
     this.element.classList.add("container");
     // new TextDecoration("lion-editor-editor");
-    new EditableArea("lion-editor-editor");
+    new EditableArea(this.element.id);
     new Toolbar(
-      "lion-editor-editor",
+      this.element.id,
       "lion-editor-toolbar-left",
       "lion-editor-toolbar-left"
     );
     new TextDecoration(
-      "lion-editor-editor",
+      this.element.id,
       "lion-editor-toolbar-top",
       "lion-editor-toolbar-top"
     );
     new ToolbarBottom(
-      "lion-editor-editor",
+      this.element.id,
       "lion-editor-toolbar-bottom",
       "lion-editor-toolbar-bottom"
+    );
+    new ImageInputModal(
+      this.element.id,
+      "lion-editor-image-modal",
+      "lion-editor-image-modal"
     );
   }
 }

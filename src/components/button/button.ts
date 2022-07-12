@@ -4,13 +4,14 @@ export class Button extends Component<HTMLDivElement, HTMLButtonElement> {
   constructor(
     hostElementId: string,
     protected name: string,
-    protected callback: Function
+    protected callback: Function,
+    protected newElementId?: string
   ) {
     super(
       hostElementId,
       "button",
       false,
-      `button-${name}`,
+      newElementId ? newElementId : "",
       "lion-editor-button"
     );
     this.configure();

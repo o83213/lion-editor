@@ -1,7 +1,5 @@
 import { Component } from "./base-component";
 import { ButtonList } from "./button/butonList";
-import { addBlock } from "../utils/addBlock";
-import { saveContent } from "../utils/saveContent";
 export class ToolbarBottom extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
   constructor(
@@ -15,11 +13,11 @@ export class ToolbarBottom extends Component<HTMLDivElement, HTMLDivElement> {
     )! as HTMLDivElement;
     this.configure();
   }
-  buttonListTop = [
+  buttons = [
     {
-      name: "store script!",
+      name: "save script!",
       callback: () => {
-        alert("store script!");
+        alert("save script!");
       },
     },
     {
@@ -30,11 +28,9 @@ export class ToolbarBottom extends Component<HTMLDivElement, HTMLDivElement> {
     },
   ];
   configure() {
-    new ButtonList(
-      this.element.id,
-      this.buttonListTop,
-      "lion-editor-buttonList",
-      ["lion-editor-button-list", `${this.element.id}-bl`]
-    );
+    new ButtonList(this.element.id, this.buttons, "lion-editor-buttonList", [
+      "lion-editor-button-list",
+      `${this.element.id}-bl`,
+    ]);
   }
 }

@@ -79,3 +79,50 @@
   background-color: blue;
   height: 100px;
 }
+/* Modal Section */
+.image-modal {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1100;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+}
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.table {
+  width: 600px;
+  height: 400px;
+  z-index: 2;
+  background-color: #fff;
+}
+.image-preview {
+  height: 300px;
+}
+.input {
+  display: none;
+}
+.label-button {
+  border: 1px solid black;
+  background: #bbb;
+  width: 30px;
+  height: 20px;
+}
+.hidden {
+  display: none;
+}
