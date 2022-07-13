@@ -1,3 +1,3 @@
-const defaultEditableAreaContent: string = `<div><p>Let's write something!</p></div>`;
+const defaultEditableAreaContent: string = `<div>Let's write something!</div>`;
 
 export { defaultEditableAreaContent };

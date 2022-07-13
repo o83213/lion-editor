@@ -1,5 +1,6 @@
 import { Component } from "./base-component";
 import { ButtonList } from "./button/butonList";
+import { changeTextStyle, TextType } from "../utils/changeTextStyle";
 export class TextDecoration extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
   constructor(
@@ -17,25 +18,25 @@ export class TextDecoration extends Component<HTMLDivElement, HTMLDivElement> {
     {
       name: "Bold!",
       callback: () => {
-        alert("Bold!");
+        changeTextStyle(TextType.Bold);
       },
     },
     {
       name: "Italic!",
       callback: () => {
-        alert("Italic!");
+        changeTextStyle(TextType.Italic);
       },
     },
     {
       name: "Under text!",
       callback: () => {
-        alert("Under text!");
+        changeTextStyle(TextType.Underline);
       },
     },
     {
       name: "Delete line!",
       callback: () => {
-        alert("Under text!");
+        changeTextStyle(TextType.Delete);
       },
     },
     {

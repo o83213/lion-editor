@@ -9,6 +9,12 @@
       GREY COLOR: #343a40
       */
 
+/*
+Css styling
+*/
+body {
+  font-family: sans-serif;
+}
 .container {
   border: 1px solid black;
   display: grid;
@@ -105,24 +111,86 @@
   display: flex;
   justify-content: space-between;
 }
-.table {
+.modalTable {
   width: 600px;
-  height: 400px;
   z-index: 2;
+  display: grid;
   background-color: #fff;
-}
-.image-preview {
-  height: 300px;
+  align-items: center;
 }
 .input {
   display: none;
 }
 .label-button {
+  display: flex;
   border: 1px solid black;
-  background: #bbb;
-  width: 30px;
-  height: 20px;
+  background: #fff;
+  color: #333;
+  height: 40px;
+  width: 60px;
+  font-size: 18px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 .hidden {
   display: none;
+}
+/*
+Modal Header Section
+*/
+.modalHeader {
+  display: flex;
+  padding: 0.8rem;
+  height: 60px;
+  background-color: #43bebf;
+  align-items: center;
+}
+.modalHeader h3 {
+  font-size: 1.6rem;
+}
+/*
+Modal Input Section
+*/
+.modalInput {
+  height: 400px;
+  background-color: blanchedalmond;
+  display: grid;
+  grid-template-columns: 1fr 70px 70px;
+  grid-template-rows: 50px 1fr 50px;
+}
+.modalInput-preview {
+  width: 80%;
+  height: 100%;
+  grid-column: 1/-1;
+  box-shadow: inset 0 0 0 2px #000;
+  background-color: #fff;
+  justify-self: center;
+}
+.modalInputFooter {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  gap: 20px;
+}
+.altTextInput {
+  height: 50%;
+  flex-grow: 1;
+}
+.altTextLabel {
+  font-size: 16px;
+  font-weight: 600;
+}
+/*
+Modal Input Section
+*/
+.modalFooter {
+  height: 50px;
+  display: flex;
+  background-color: #43bebf;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+  padding-right: 20px;
 }
