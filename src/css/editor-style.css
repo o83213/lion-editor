@@ -159,14 +159,16 @@ Modal Input Section
   display: grid;
   grid-template-columns: 1fr 70px 70px;
   grid-template-rows: 50px 1fr 50px;
+  overflow: hidden;
 }
 .modalInput-preview {
-  width: 80%;
   height: 100%;
   grid-column: 1/-1;
   box-shadow: inset 0 0 0 2px #000;
   background-color: #fff;
   justify-self: center;
+  object-fit: cover;
+  overflow: auto;
 }
 .modalInputFooter {
   display: flex;

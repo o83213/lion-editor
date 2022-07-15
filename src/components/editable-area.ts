@@ -1,6 +1,7 @@
 import { Component } from "./base-component";
 import { loadContent } from "../utils/loadContent";
-import { defaultEditableAreaContent as defaultContent } from "../data/default-contents";
+
+const defaultContent: string = `<div>Let's write something!</div>`;
 
 export class EditableArea extends Component<HTMLDivElement, HTMLDivElement> {
   constructor(hostElementId: string) {

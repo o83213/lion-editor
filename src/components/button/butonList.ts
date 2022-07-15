@@ -1,14 +1,14 @@
 import { Component } from "../base-component";
 import { Button } from "./button";
-type buttonConfiguration = {
+type buttonSetting = {
   name: string;
   callback: Function;
 };
 export class ButtonList extends Component<HTMLDivElement, HTMLElement> {
-  protected buttonList: buttonConfiguration[];
+  protected buttonList: buttonSetting[];
   constructor(
     hostElementId: string,
-    buttonList: buttonConfiguration[],
+    buttonList: buttonSetting[],
     buttonListId: string,
     buttonListClass?: string[] | string
   ) {

@@ -28,7 +28,7 @@ export class ToolbarBottom extends Component<HTMLDivElement, HTMLDivElement> {
     },
   ];
   configure() {
-    new ButtonList(this.element.id, this.buttons, "lion-editor-buttonList", [
+    new ButtonList(this.element.id, this.buttons, `${this.element.id}-list1`, [
       "lion-editor-button-list",
       `${this.element.id}-bl`,
     ]);

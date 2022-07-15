@@ -6,13 +6,10 @@ import { ToolbarBottom } from "./toolbarBottom";
 import { ImageInputModal } from "./imgae-input-modal";
 export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
   constructor(hostElementId: string) {
-    super(hostElementId, "div", true, "lion-editor-editor");
-    console.log(hostElementId);
+    super(hostElementId, "div", true, "lion-editor-editor", "container");
     this.configure();
   }
   configure(): void {
-    this.element.classList.add("container");
-    // new TextDecoration("lion-editor-editor");
     new EditableArea(this.element.id);
     new Toolbar(
       this.element.id,
