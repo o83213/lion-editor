@@ -1,6 +1,7 @@
-import { Component } from "./base-component";
-import { ButtonList } from "./button/butonList";
-import { changeTextStyle, TextType } from "../utils/changeTextStyle";
+import { Component } from "../base-component";
+import { ButtonList } from "../button/butonList";
+// import { changeTextStyle, TextType } from "@utils/changeTextStyle";
+import { changeTextStyle, TextType } from "../../utils/changeTextStyle";
 export class TextDecoration extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
   constructor(

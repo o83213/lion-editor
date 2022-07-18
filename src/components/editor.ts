@@ -1,8 +1,10 @@
 import { Component } from "./base-component";
 import { EditableArea } from "./editable-area";
-import { TextDecoration } from "./text-decoration";
-import { Toolbar } from "./toolbar";
-import { ToolbarBottom } from "./toolbarBottom";
+// import { TextDecoration } from "./toolbars/text-decoration";
+import { TextDecoration } from "./toolbars/text-decoration";
+import { ToolbarLeft } from "./toolbars/toolbarLeft";
+import { ToolbarBottom } from "./toolbars/toolbarBottom";
+// import { ImageInputModal } from "./imgae-input-modal";
 import { ImageInputModal } from "./imgae-input-modal";
 export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
   constructor(hostElementId: string) {
@@ -11,7 +13,7 @@ export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
   }
   configure(): void {
     new EditableArea(this.element.id);
-    new Toolbar(
+    new ToolbarLeft(
       this.element.id,
       "lion-editor-toolbar-left",
       "lion-editor-toolbar-left"

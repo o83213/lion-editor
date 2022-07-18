@@ -5,8 +5,9 @@ enum TextType {
   Delete,
 }
 const changeTextStyle = (textType: TextType) => {
-  const selectionObj = window.getSelection();
-  if (!selectionObj) {
+  const selectionObj = window.getSelection()!;
+  console.log(selectionObj?.isCollapsed);
+  if (selectionObj?.isCollapsed) {
     alert("No selection!");
     return;
   }

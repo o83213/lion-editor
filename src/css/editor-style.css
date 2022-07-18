@@ -196,3 +196,18 @@ Modal Input Section
   gap: 20px;
   padding-right: 20px;
 }
+.embeded-card {
+  width: 500px;
+}
+
+.embeded-card iframe {
+  width: 100% !important;
+  /* height: 100% !important; */
+}
+.editor-image {
+  width: 300px;
+}
+.editor-image img {
+  width: 100%;
+  object-fit: cover;
+}

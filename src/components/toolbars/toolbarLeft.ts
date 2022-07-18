@@ -1,8 +1,8 @@
-import { Component } from "./base-component";
-import { ButtonList } from "./button/butonList";
-import { addBlock } from "../utils/addBlock";
-import { saveContent } from "../utils/saveContent";
-export class Toolbar extends Component<HTMLDivElement, HTMLDivElement> {
+import { Component } from "../base-component";
+import { ButtonList } from "../button/butonList";
+import { addBlock } from "../../utils/addBlock";
+import { saveContent } from "../../utils/saveContent";
+export class ToolbarLeft extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
   constructor(
     hostElementId: string,
@@ -35,7 +35,7 @@ export class Toolbar extends Component<HTMLDivElement, HTMLDivElement> {
       },
     },
     {
-      name: "Ceate IG embeded!",
+      name: "Ceate embeded!",
       callback: () => {
         addBlock(this.editableArea, "blockquote");
       },

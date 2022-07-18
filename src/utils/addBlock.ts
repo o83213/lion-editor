@@ -1,3 +1,4 @@
+import { setHTMLWithScript } from "./runEmbedCode";
 export const addBlock = (target: HTMLElement, blockType: string) => {
   console.log("addBlockHandler");
   const newBlock = document.createElement("div");
@@ -9,7 +10,7 @@ export const addBlock = (target: HTMLElement, blockType: string) => {
       content.style.listStylePosition = "inside";
       for (let i = 0; i < 3; i++) {
         const listElement = document.createElement("li");
-        // listElement.innerHTML = `list:${i + 1}`;
+
         content.append(listElement);
       }
       break;
@@ -21,9 +22,11 @@ export const addBlock = (target: HTMLElement, blockType: string) => {
       }
       content = document.createElement("div");
       content.classList.add("embeded-card");
+      // setHTMLWithScript(content, data);
       // make the parent of the first div in the document becomes the context node
       const range = document.createRange();
       const embededFrament = range.createContextualFragment(data);
+      console.log(embededFrament);
       content.appendChild(embededFrament);
       break;
     default:

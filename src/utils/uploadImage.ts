@@ -1,19 +1,22 @@
-const uploadImageFromPc = () => {
+import { dealImages } from "./compressImg";
+const uploadImageFromPc = async () => {
   const input = document.getElementById("inputPc")! as HTMLInputElement;
   const curFile = input.files!;
-  console.log(curFile);
   const ImageFile = curFile[0];
   const image = document.getElementById("image-preview") as HTMLImageElement;
   console.log(image);
-  const imageURL = URL.createObjectURL(ImageFile);
-  image.setAttribute("src", imageURL);
-  // image.src = imageURL;
 
-  // URL.revokeObjectURL(imageURL);
+  // check size and compress img
+  const newImage = await dealImages(ImageFile);
+  console.log(newImage);
+  if (newImage) {
+    const imageURL = URL.createObjectURL(newImage);
+    image.setAttribute("src", imageURL);
+  }
+  //
 };
 
 const uploadImageFromUrl = () => {
-  // alert("sayHI!!!!");
   const imageURL = prompt("請輸入網址")!;
   if (imageURL.trim().length === 0) {
     alert("沒輸入內容喔!");
@@ -26,6 +29,7 @@ const uploadImageFromUrl = () => {
 const saveImageHandler = (hostElement: HTMLElement) => {
   const target = document.getElementById("lion-editor-editable-area")!;
   const container = document.createElement("div");
+  container.classList.add("editor-image");
   const img = document.createElement("img");
   const imagePreview = document.getElementById(
     "image-preview"
