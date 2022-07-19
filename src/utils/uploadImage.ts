@@ -1,17 +1,21 @@
-import { dealImages } from "./compressImg";
+import { dealImage } from "./compressImg";
 const uploadImageFromPc = async () => {
   const input = document.getElementById("inputPc")! as HTMLInputElement;
   const curFile = input.files!;
   const ImageFile = curFile[0];
   const image = document.getElementById("image-preview") as HTMLImageElement;
-  console.log(image);
 
-  // check size and compress img
-  const newImage = await dealImages(ImageFile);
-  console.log(newImage);
-  if (newImage) {
-    const imageURL = URL.createObjectURL(newImage);
-    image.setAttribute("src", imageURL);
+  //
+  try {
+    const newImage = await dealImage(ImageFile);
+    const { objectURL } = newImage;
+    image.src = objectURL;
+  } catch (error) {
+    if (
+      error instanceof Error ||
+      (error instanceof Object && "message" in error)
+    )
+      alert(error.message);
   }
   //
 };

@@ -2,6 +2,7 @@ import { setHTMLWithScript } from "./runEmbedCode";
 export const addBlock = (target: HTMLElement, blockType: string) => {
   console.log("addBlockHandler");
   const newBlock = document.createElement("div");
+  newBlock.classList.add("embeded-card-container");
   let content: HTMLElement | string;
   switch (blockType) {
     case "ul":
