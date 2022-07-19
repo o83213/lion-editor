@@ -1,4 +1,4 @@
-import { dealImage } from "./compressImg";
+import { getCompressedImage } from "./compressImg";
 const uploadImageFromPc = async () => {
   const input = document.getElementById("inputPc")! as HTMLInputElement;
   const curFile = input.files!;
@@ -7,7 +7,7 @@ const uploadImageFromPc = async () => {
 
   //
   try {
-    const newImage = await dealImage(ImageFile);
+    const newImage = await getCompressedImage(ImageFile);
     const { objectURL } = newImage;
     image.src = objectURL;
   } catch (error) {
@@ -20,14 +20,37 @@ const uploadImageFromPc = async () => {
   //
 };
 
-const uploadImageFromUrl = () => {
+const uploadImageFromUrl = async () => {
   const imageURL = prompt("請輸入網址")!;
   if (imageURL.trim().length === 0) {
     alert("沒輸入內容喔!");
     return;
   }
   const image = document.getElementById("image-preview") as HTMLImageElement;
-  image.src = imageURL;
+
+  const getImageSrc = new Promise<string>((resolve, reject) => {
+    const newImage = document.createElement("img");
+
+    newImage.onload = () => {
+      console.log("onload!");
+      resolve(imageURL);
+    };
+
+    newImage.onerror = () => {
+      console.log("fail!");
+      reject(new Error(`fail to load image from: ${imageURL}`));
+    };
+    newImage.src = imageURL;
+  });
+  try {
+    image.src = await getImageSrc;
+  } catch (error) {
+    if (
+      error instanceof Error ||
+      (error instanceof Object && "message" in error)
+    )
+      alert(error.message);
+  }
 };
 
 const saveImageHandler = (hostElement: HTMLElement) => {

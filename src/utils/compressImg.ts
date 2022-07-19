@@ -1,7 +1,7 @@
 const MinImageWidth = 300; // 最小的寬度限制, width > target-px
 const MaxImageSize = 5e5; // 500kb
 const imgQuality = 0.95; // 轉成canvas後的圖片品質(0~1)
-export const dealImage = async (imageFile: File) => {
+export const getCompressedImage = async (imageFile: File) => {
   // 1. check the file size
   // 2. check the file dimension(especially for width)
   // 3. compress the file
@@ -13,7 +13,6 @@ export const dealImage = async (imageFile: File) => {
   }
   return compressFile;
 };
-
 const loadAndCompressImg = (file: File) => {
   // 1. check the file size
   if (file.size >= MaxImageSize) {
