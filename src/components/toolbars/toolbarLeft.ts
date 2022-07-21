@@ -1,11 +1,12 @@
 import { Component } from "../base-component";
 import { ButtonList } from "../button/butonList";
-import { addBlock } from "../../utils/addBlock";
-import { saveContent } from "../../utils/saveContent";
+// import { addBlock } from "../../utils/helpers/addBlock";
+// import { saveContent } from "../../utils/saveContent";
 export class ToolbarLeft extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
   constructor(
     hostElementId: string,
+    protected methods: any,
     newElementId?: string,
     newElementClass?: string[] | string
   ) {
@@ -17,36 +18,25 @@ export class ToolbarLeft extends Component<HTMLDivElement, HTMLDivElement> {
   }
   buttons = [
     {
-      name: "Create Block!",
-      callback: () => {
-        addBlock(this.editableArea, "p");
-      },
-    },
-    {
-      name: "Save Content!",
-      callback: () => {
-        saveContent(this.editableArea.innerHTML);
-      },
+      name: "Create P Block!",
+      callback: this.methods.createParagraphBlock,
     },
     {
       name: "Ceate order list!",
-      callback: () => {
-        addBlock(this.editableArea, "ol");
-      },
+      callback: this.methods.createOrderList,
     },
     {
       name: "Ceate embeded!",
-      callback: () => {
-        addBlock(this.editableArea, "blockquote");
-      },
+      callback: this.methods.createEmbededBlock,
+    },
+    {
+      // name: "Ceate embeded!",
+      name: "Save Content!",
+      callback: this.methods.saveContent,
     },
     {
       name: "Add photo!",
-      callback: () => {
-        document
-          .getElementById("lion-editor-image-modal")!
-          .classList.toggle("hidden");
-      },
+      callback: this.methods.openImgModal,
     },
   ];
   configure() {

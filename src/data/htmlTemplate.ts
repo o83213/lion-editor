@@ -1,4 +1,4 @@
-const modalTemplate = `
+const modalTemplate: string = `
     <div class="image-modal">
       <div class="overlay"></div>
       <div class="modalTable">
@@ -26,4 +26,5 @@ const modalTemplate = `
       </div>
     </div>
 `;
-export { modalTemplate };
+const editableAreaTemplate: string = `<div>Let's write something!</div>`;
+export { modalTemplate, editableAreaTemplate };

@@ -1,8 +1,8 @@
-import { setHTMLWithScript } from "./runEmbedCode";
+// import { setHTMLWithScript } from "../runEmbedCode";
 export const addBlock = (target: HTMLElement, blockType: string) => {
   console.log("addBlockHandler");
   const newBlock = document.createElement("div");
-  newBlock.classList.add("embeded-card-container");
+  console.log(target);
   let content: HTMLElement | string;
   switch (blockType) {
     case "ul":
@@ -23,7 +23,6 @@ export const addBlock = (target: HTMLElement, blockType: string) => {
       }
       content = document.createElement("div");
       content.classList.add("embeded-card");
-      // setHTMLWithScript(content, data);
       // make the parent of the first div in the document becomes the context node
       const range = document.createRange();
       const embededFrament = range.createContextualFragment(data);

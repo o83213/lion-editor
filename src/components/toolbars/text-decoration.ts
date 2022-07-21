@@ -1,11 +1,12 @@
 import { Component } from "../base-component";
 import { ButtonList } from "../button/butonList";
 // import { changeTextStyle, TextType } from "@utils/changeTextStyle";
-import { changeTextStyle, TextType } from "../../utils/changeTextStyle";
+import { changeTextStyle, TextType } from "../../utils/helpers/changeTextStyle";
 export class TextDecoration extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
   constructor(
     hostElementId: string,
+    protected methods: any,
     newElementId?: string,
     newElementClass?: string[] | string
   ) {
@@ -18,33 +19,23 @@ export class TextDecoration extends Component<HTMLDivElement, HTMLDivElement> {
   buttons = [
     {
       name: "Bold!",
-      callback: () => {
-        changeTextStyle(TextType.Bold);
-      },
+      callback: this.methods.changeTextBold,
     },
     {
       name: "Italic!",
-      callback: () => {
-        changeTextStyle(TextType.Italic);
-      },
+      callback: this.methods.changeTextItalic,
     },
     {
-      name: "Under text!",
-      callback: () => {
-        changeTextStyle(TextType.Underline);
-      },
+      name: "Underline!",
+      callback: this.methods.changeTextUnderline,
     },
     {
-      name: "Delete line!",
-      callback: () => {
-        changeTextStyle(TextType.Delete);
-      },
+      name: "Deleteline!",
+      callback: this.methods.changeTextDeleteline,
     },
     {
-      name: "Hyper link!",
-      callback: () => {
-        alert("Hyper link!");
-      },
+      name: "Hyperlink!",
+      callback: this.methods.changeTextHyperlink,
     },
   ];
   configure() {
