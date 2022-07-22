@@ -21,12 +21,12 @@ export const addBlock = (target: HTMLElement, blockType: string) => {
         alert("沒輸入內容喔!");
         return;
       }
+      newBlock.classList.add("embeded-card-container");
       content = document.createElement("div");
       content.classList.add("embeded-card");
       // make the parent of the first div in the document becomes the context node
       const range = document.createRange();
       const embededFrament = range.createContextualFragment(data);
-      console.log(embededFrament);
       content.appendChild(embededFrament);
       break;
     default:
