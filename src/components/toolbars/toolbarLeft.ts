@@ -1,7 +1,5 @@
 import { Component } from "../base-component";
 import { ButtonList } from "../button/butonList";
-// import { addBlock } from "../../utils/helpers/addBlock";
-// import { saveContent } from "../../utils/saveContent";
 export class ToolbarLeft extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
   constructor(

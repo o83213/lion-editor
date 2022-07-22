@@ -1,9 +1,6 @@
 import { Component } from "../base-component";
 import { ButtonList } from "../button/butonList";
-// import { changeTextStyle, TextType } from "@utils/changeTextStyle";
-import { changeTextStyle, TextType } from "../../utils/helpers/changeTextStyle";
 export class TextDecoration extends Component<HTMLDivElement, HTMLDivElement> {
-  editableArea: HTMLDivElement;
   constructor(
     hostElementId: string,
     protected methods: any,
@@ -11,9 +8,6 @@ export class TextDecoration extends Component<HTMLDivElement, HTMLDivElement> {
     newElementClass?: string[] | string
   ) {
     super(hostElementId, "div", true, newElementId, newElementClass);
-    this.editableArea = document.getElementById(
-      "lion-editor-editable-area"
-    )! as HTMLDivElement;
     this.configure();
   }
   buttons = [

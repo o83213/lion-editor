@@ -1,9 +1,9 @@
 import { Component } from "./base-component";
 import { EditableArea } from "./editable-area";
-import { TextDecoration } from "./toolbars/text-decoration";
+import { TextDecoration } from "./toolbars/textDecoration";
 import { ToolbarLeft } from "./toolbars/toolbarLeft";
 import { ToolbarBottom } from "./toolbars/toolbarBottom";
-import { ImageInputModal } from "./imgae-input-modal";
+import { ImageModal } from "./imgaeModal";
 //
 import { methods } from "../utils/methods/index";
 import { editableAreaTemplate } from "../data/htmlTemplate";
@@ -27,23 +27,27 @@ export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
       "lion-editor-toolbar-top",
       "lion-editor-toolbar-top"
     );
-    // new ToolbarBottom(
-    //   this.element.id,
-    //   "lion-editor-toolbar-bottom",
-    //   "lion-editor-toolbar-bottom"
-    // );
-    // new ImageInputModal(
-    //   this.element.id,
-    //   "lion-editor-image-modal",
-    //   "lion-editor-image-modal"
-    // );
+    new ToolbarBottom(
+      this.element.id,
+      this.methods,
+      "lion-editor-toolbar-bottom",
+      "lion-editor-toolbar-bottom"
+    );
+    new ImageModal(
+      this.element.id,
+      this.methods,
+      "lion-editor-image-modal",
+      "lion-editor-image-modal"
+    );
     this.getQueryElement();
     this.methods.loadContent();
   }
   queryElements = {
-    editableArea: document.createElement("div"),
+    editableArea: document.createElement("div") as HTMLElement,
+    imageModal: document.createElement("div") as HTMLElement,
   };
   protected methods = {
+    // textDecoration
     changeTextBold: () => {
       methods.changeTextBold();
     },
@@ -74,10 +78,30 @@ export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
       methods.saveContent(this.queryElements.editableArea.innerHTML);
     },
     openImgModal: () => {
-      alert("not yet...");
+      methods.openImgModal(this.queryElements.imageModal);
     },
+    // toolbarBottom
+    saveScript: () => {
+      methods.saveScript();
+    },
+    pushToDatabase: () => {
+      methods.pushToDatabase(this.queryElements.editableArea.innerHTML);
+    },
+    // imageModal
+    loadImgFromPC: () => {
+      methods.loadImgFromPC();
+    },
+    loadImgFromURL: () => {
+      methods.loadImgFromURL();
+    },
+    closeImgModal: () => {
+      methods.closeImgModal();
+    },
+    saveImage: () => {
+      methods.saveImage();
+    },
+    //
     loadContent: () => {
-      // alert("load content!");
       methods.loadContent(
         this.queryElements.editableArea,
         editableAreaTemplate
@@ -87,6 +111,9 @@ export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
   getQueryElement() {
     this.queryElements.editableArea = document.getElementById(
       "lion-editor-editable-area"
+    )! as HTMLDivElement;
+    this.queryElements.imageModal = document.getElementById(
+      "lion-editor-image-modal"
     )! as HTMLDivElement;
   }
 }

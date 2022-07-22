@@ -4,6 +4,7 @@ export class ToolbarBottom extends Component<HTMLDivElement, HTMLDivElement> {
   editableArea: HTMLDivElement;
   constructor(
     hostElementId: string,
+    protected methods: any,
     newElementId?: string,
     newElementClass?: string[] | string
   ) {
@@ -16,15 +17,11 @@ export class ToolbarBottom extends Component<HTMLDivElement, HTMLDivElement> {
   buttons = [
     {
       name: "save script!",
-      callback: () => {
-        alert("save script!");
-      },
+      callback: this.methods.saveScript,
     },
     {
       name: "publish!",
-      callback: () => {
-        alert("publish!");
-      },
+      callback: this.methods.pushToDatabase,
     },
   ];
   configure() {

@@ -8,10 +8,10 @@ const modalTemplate: string = `
         </div>
         <div class="modalInput">
           <h3>選擇檔案</h3>
-          <input type="file" id="inputPc" class="input" /><label
-            for="inputPc"
+          <input type="file" class="input" /><button
+            id="inputPc"
             class="label-button"
-            >從電腦</label
+            >從電腦</button
           ><button id="inputUrl" class="label-button">從網址</button>
           <img class="modalInput-preview" id="image-preview" />
           <div class="modalInputFooter">

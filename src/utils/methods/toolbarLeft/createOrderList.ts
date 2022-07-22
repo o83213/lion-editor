@@ -1,4 +1,4 @@
-import { addBlock } from "../helpers/addBlock";
+import { addBlock } from "../../helpers/addBlock";
 export const createOrderList = (target: HTMLElement) => {
   addBlock(target, "ol");
 };
