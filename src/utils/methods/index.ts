@@ -19,7 +19,7 @@ import { loadImgFromURL } from "./imageModal/loadImgFromURL";
 import { closeImgModal } from "./imageModal/closeImgModal";
 import { saveImage } from "./imageModal/saveImage";
 //
-import { loadContent } from "./loadContent";
+import { loadContent } from "./others/loadContent";
 const methods = {
   // textDecoration
   changeTextBold,

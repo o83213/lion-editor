@@ -1,4 +1,4 @@
-import { Component } from "../base-component";
+import { Component } from "../BaseComponent";
 
 export class Button extends Component<HTMLDivElement, HTMLButtonElement> {
   constructor(

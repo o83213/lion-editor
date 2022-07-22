@@ -1,12 +1,6 @@
-import { Component } from "./base-component";
+import { Component } from "./BaseComponent";
 import { modalTemplate } from "../data/htmlTemplate";
-import { BindedButton } from "../components/button/bindedButton";
-// import {
-//   uploadImageFromPc,
-//   uploadImageFromUrl,
-//   saveImageHandler,
-//   clearImageHandler,
-// } from "../utils/olderFunctions/uploadImage";
+import { BindedButton } from "./Button/BindedButton";
 export class ImageModal extends Component<HTMLDivElement, HTMLDivElement> {
   constructor(
     hostElementId: string,
@@ -50,7 +44,6 @@ export class ImageModal extends Component<HTMLDivElement, HTMLDivElement> {
     this.element.insertAdjacentHTML("beforeend", modalTemplate);
 
     // build up the buttonList
-    console.log("bindnewBtn");
     this.buttons.forEach(
       (btn) => new BindedButton(btn.id, btn.name, btn.callback)
     );

@@ -1,5 +1,5 @@
-import { Component } from "../base-component";
-import { Button } from "./button";
+import { Component } from "../BaseComponent";
+import { Button } from "./Button";
 type buttonSetting = {
   name: string;
   callback: Function;
@@ -17,7 +17,6 @@ export class ButtonList extends Component<HTMLDivElement, HTMLElement> {
     this.configure();
   }
   configure() {
-    // console.log(this.buttonList);
     if (this.buttonList.length > 0) {
       this.buttonList.forEach((buttonSetting) => {
         new Button(this.element.id, buttonSetting.name, buttonSetting.callback);

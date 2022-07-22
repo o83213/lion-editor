@@ -1,9 +1,9 @@
-import { Component } from "./base-component";
-import { EditableArea } from "./editable-area";
-import { TextDecoration } from "./toolbars/textDecoration";
-import { ToolbarLeft } from "./toolbars/toolbarLeft";
-import { ToolbarBottom } from "./toolbars/toolbarBottom";
-import { ImageModal } from "./imgaeModal";
+import { Component } from "./BaseComponent";
+import { EditableArea } from "./EditableArea";
+import { TextDecoration } from "./Toolbars/TextDecoration";
+import { ToolbarLeft } from "./Toolbars/ToolbarLeft";
+import { ToolbarBottom } from "./Toolbars/ToolbarBottom";
+import { ImageModal } from "./ImgaeModal";
 //
 import { methods } from "../utils/methods/index";
 import { editableAreaTemplate } from "../data/htmlTemplate";
@@ -11,7 +11,6 @@ export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
   constructor(hostElementId: string) {
     super(hostElementId, "div", true, "lion-editor-editor", "container");
     this.configure();
-    console.log(this.queryElements);
   }
   configure(): void {
     new EditableArea(this.element.id);
@@ -43,8 +42,11 @@ export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
     this.methods.loadContent();
   }
   queryElements = {
-    editableArea: document.createElement("div") as HTMLElement,
-    imageModal: document.createElement("div") as HTMLElement,
+    editableArea: document.createElement("div"),
+    imageModal: document.createElement("div"),
+    previewImg: document.createElement("img"),
+    imgFileInput: document.createElement("input"),
+    altInput: document.createElement("input"),
   };
   protected methods = {
     // textDecoration
@@ -89,16 +91,27 @@ export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
     },
     // imageModal
     loadImgFromPC: () => {
-      methods.loadImgFromPC();
+      methods.loadImgFromPC(
+        this.queryElements.imgFileInput,
+        this.queryElements.previewImg
+      );
     },
     loadImgFromURL: () => {
-      methods.loadImgFromURL();
+      methods.loadImgFromURL(this.queryElements.previewImg);
     },
     closeImgModal: () => {
-      methods.closeImgModal();
+      methods.closeImgModal(
+        this.queryElements.imageModal,
+        this.queryElements.previewImg
+      );
     },
     saveImage: () => {
-      methods.saveImage();
+      methods.saveImage(
+        this.queryElements.imageModal,
+        this.queryElements.editableArea,
+        this.queryElements.previewImg,
+        this.queryElements.altInput
+      );
     },
     //
     loadContent: () => {
@@ -115,5 +128,14 @@ export class Editor extends Component<HTMLDivElement, HTMLDivElement> {
     this.queryElements.imageModal = document.getElementById(
       "lion-editor-image-modal"
     )! as HTMLDivElement;
+    this.queryElements.previewImg = document.getElementById(
+      "image-preview"
+    )! as HTMLImageElement;
+    this.queryElements.altInput = document.getElementById(
+      "altTextInput"
+    )! as HTMLInputElement;
+    this.queryElements.imgFileInput = document.getElementById(
+      "imgFileInput"
+    )! as HTMLInputElement;
   }
 }

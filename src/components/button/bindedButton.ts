@@ -10,7 +10,6 @@ export class BindedButton {
     this.configure();
   }
   configure() {
-    console.log(this.element);
     this.element.innerText = this.name;
     this.element.addEventListener("click", this.callback as (e: Event) => void);
     if (this.buttonClassName) {
