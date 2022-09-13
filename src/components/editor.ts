@@ -1,9 +1,9 @@
 import { Component } from "./BaseComponent";
 import { EditableArea } from "./EditableArea";
-import { TextDecoration } from "./Toolbars/TextDecoration";
-import { ToolbarLeft } from "./Toolbars/ToolbarLeft";
-import { ToolbarBottom } from "./Toolbars/ToolbarBottom";
-import { ImageModal } from "./ImgaeModal";
+import { TextDecoration } from "./toolbars/textDecoration";
+import { ToolbarLeft } from "./toolbars/toolbarLeft";
+import { ToolbarBottom } from "./toolbars/toolbarBottom";
+import { ImageModal } from "./imgaeModal";
 //
 import { methods } from "../utils/methods/index";
 import { editableAreaTemplate } from "../data/htmlTemplate";

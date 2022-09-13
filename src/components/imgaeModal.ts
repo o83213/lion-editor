@@ -1,6 +1,6 @@
 import { Component } from "./BaseComponent";
 import { modalTemplate } from "../data/htmlTemplate";
-import { BindedButton } from "./Button/BindedButton";
+import { BindedButton } from "./button/bindedButton";
 export class ImageModal extends Component<HTMLDivElement, HTMLDivElement> {
   constructor(
     hostElementId: string,
